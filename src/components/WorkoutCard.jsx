@@ -53,10 +53,10 @@ function WorkoutCard({ workout }) {
 						</div>
 						<div>
 							<button onClick={handleEdit}>
-								<EditIcon sx={{ display: { xs: "none", md: "flex" }, mt: 0.5, ml: 0.5 }} />
+								<EditIcon sx={{ display: { xs: "flex", md: "flex" }, mt: 0.5, ml: 0.5 }} />
 							</button>
 							<button onClick={handleClick}>
-								<DustBin sx={{ display: { xs: "none", md: "flex" }, mt: 0.5, ml: 0.5 }} />
+								<DustBin sx={{ display: { xs: "flex", md: "flex" }, mt: 0.5, ml: 0.5 }} />
 							</button>
 						</div>
 					</div>
