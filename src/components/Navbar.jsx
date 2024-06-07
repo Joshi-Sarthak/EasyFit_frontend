@@ -36,10 +36,10 @@ function ResponsiveAppBar() {
 	};
 
 	return (
-		<AppBar position="sticky" className="px-4" sx={{ bgcolor: "black" }}>
+		<AppBar position="sticky" sx={{ bgcolor: "black" }}>
 			<Toolbar disableGutters>
 				<Logo sx={{ display: { xs: "none", md: "flex" }, mr: 2 }} />
-				<Link to="/">
+				<Link to="/" style={{ textDecoration: "none" }}>
 					<Typography
 						variant="h6"
 						noWrap
@@ -50,7 +50,6 @@ function ResponsiveAppBar() {
 							fontWeight: 700,
 							letterSpacing: ".3rem",
 							color: "inherit",
-							textDecoration: "none",
 						}}
 					>
 						EasyFit
@@ -77,41 +76,69 @@ function ResponsiveAppBar() {
 					EasyFit
 				</Typography>
 				<Box sx={{ flexGrow: 1 }} />
+
 				<ThemeProvider theme={theme}>
 					{user ? (
-						<div>
-							<Button type="submit" variant="outlined" sx={{ mr: 2, borderRadius: "16px" }} onClick={handleClick}>
-								Logout
-							</Button>
-						</div>
+						<Button
+							type="submit"
+							variant="outlined"
+							sx={{
+								mr: 2,
+								borderRadius: "24px",
+								fontSize: { xs: "0.8rem", sm: "1rem" },
+								padding: { xs: "6px 8px", sm: "6px 12px" },
+							}}
+							onClick={handleClick}
+						>
+							Logout
+						</Button>
 					) : (
-						<div>
-							<Link to="/login">
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: "row",
+								gap: 2,
+								alignItems: "center",
+							}}
+						>
+							<Link to="/login" style={{ textDecoration: "none" }}>
 								<Button
 									type="submit"
 									sx={{
 										color: "white",
-										mr: 2,
 										"&:hover": {
 											backgroundColor: "white",
 											color: "black",
 										},
-										borderRadius: "16px",
+
+										borderRadius: "24px",
+										fontSize: { xs: "0.8rem", sm: "1rem" },
+										padding: { xs: "8px 8px", sm: "8px 12px" },
 									}}
 								>
 									Login
 								</Button>
 							</Link>
-							<Link to="/signup">
-								<Button type="submit" variant="outlined" sx={{ mr: 2, borderRadius: "16px" }}>
+							<Link to="/signup" style={{ textDecoration: "none" }}>
+								<Button
+									type="submit"
+									variant="outlined"
+									sx={{
+										mr: 2,
+										borderRadius: "24px",
+										fontSize: { xs: "0.8rem", sm: "1rem" },
+										padding: { xs: "6px 8px", sm: "6px 12px" },
+									}}
+								>
 									Sign Up
 								</Button>
 							</Link>
-						</div>
+						</Box>
 					)}
 				</ThemeProvider>
 			</Toolbar>
 		</AppBar>
 	);
 }
+
 export default ResponsiveAppBar;
