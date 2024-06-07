@@ -46,12 +46,20 @@ function Home() {
 		<div className="lg:w-screen lg:flex lg:flex-row lg:justify-between">
 			<div className="lg:flex lg:flex-col lg:w-1/2">
 				<Typography variant="h4">
-					<Box sx={{ fontStyle: "italic", mt: 4, ml: 16 }}>Workouts</Box>
+					<Box sx={{ fontStyle: "italic", mt: 4, ml: [0, 16], textAlign: ["center", "left"] }}>Workouts</Box>
 				</Typography>
 				{workouts && workouts.length > 0 ? (
 					workouts.map((workout) => <WorkoutCard key={workout._id} workout={workout} />)
 				) : (
-					<Typography variant="h5" sx={{ fontStyle: "italic", mt: 4, ml: 16 }}>
+					<Typography
+						variant="h5"
+						sx={{
+							fontStyle: "italic",
+							mt: 4,
+							ml: [0, 16],
+							textAlign: ["center", "left"],
+						}}
+					>
 						No workouts available
 					</Typography>
 				)}
