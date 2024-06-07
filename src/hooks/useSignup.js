@@ -8,7 +8,7 @@ export const useSignup = () => {
 	const { dispatch } = useAuthContext();
 
 	const signup = async (email, password) => {
-		setIsLoading(false);
+		setIsLoading(true);
 		setError(null);
 
 		const response = await fetch(`${baseURL}/api/user/signup`, {
